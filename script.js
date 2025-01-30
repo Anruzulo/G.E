@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const month = months[date.getMonth()];
     const year = date.getFullYear();
 
-    return `${day} de ${month} ${year}`;
+    return `${day+1} de ${month} ${year}`;
   }
 
   // Avanzar a la siguiente sección
