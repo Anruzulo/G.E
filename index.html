@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario y Contrato</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sección Izquierda -->
+    <div class="left-section">
+      <h2>Formulario</h2>
+      <div class="progress-container">
+        <label for="progress">Progreso:</label>
+        <div class="progress-bar-wrapper">
+          <div class="progress-background"></div>
+          <div id="progress" class="progress-bar"></div>
+        </div>
+        <span id="progress-text">0%</span>
+      </div>      
+      <!-- Contenedor para secciones dinámicas -->
+      <div id="form-sections">
+        
+        <div id="section-1" class="form-section">
+          <h3>Parte 1: Información Básica</h3>
+          <label for="nombre_sitio">Nombre del lugar:</label>
+          <input type="text" id="nombre_sitio" name="nombre_sitio" placeholder="Ciudad, País" data-target="span_id_nombre_sitio_contrato">
+
+          <label for="fecha_contrato">Fecha del contrato:</label>
+          <input type="date" id="fecha_contrato" name="fecha_contrato" data-target="span_id_fecha_contrato">
+        </div>
+        
+        <div id="section-2" class="form-section">
+          <h3>Parte 2: Información del Arrendador</h3>
+          <label for="nombre_arrendador">Nombre del arrendador:</label>
+          <input type="text" id="nombre_arrendador" name="nombre_arrendador" data-target="span_id_nombre_arrendador1">
+
+          <label for="domicilio_arrendador">Domicilio del arrendador:</label>
+          <input type="text" id="domicilio_arrendador" name="domicilio_arrendador" data-target="span_id_domicilio_arrendador_fisica1">
+        </div>
+        
+        <div id="section-3" class="form-section">
+          <h3>Parte 3: Información del Arrendatario</h3>
+          <label for="nombre_arrendatario">Nombre del arrendatario:</label>
+          <input type="text" id="nombre_arrendatario" name="nombre_arrendatario" data-target="span_id_nombre_arrendatario1">
+
+          <label for="domicilio_arrendatario">Domicilio del arrendatario:</label>
+          <input type="text" id="domicilio_arrendatario" name="domicilio_arrendatario" data-target="span_id_domicilio_arrendatario_fisica1">
+        </div>
+        
+        <div id="section-4" class="form-section">
+          <h3>Parte 4: Información sobre el Inmueble</h3>
+          <label for="direccion_inmueble">Dirección del inmueble:</label>
+          <input type="text" id="direccion_inmueble" name="direccion_inmueble" data-target="span_id_direccion_inmueble">
+
+          <label for="tipo_inmueble">Tipo de inmueble:</label>
+          <input type="text" id="tipo_inmueble" name="tipo_inmueble" data-target="span_id_tipo_inmueble">
+        </div>
+        
+        <div id="section-5" class="form-section">
+          <h3>Parte 5: Condiciones del Arrendamiento</h3>
+        
+          <label for="fecha_inicio">Fecha de inicio del contrato:</label>
+          <input type="date" id="fecha_inicio" name="fecha_inicio" data-target="span_fecha_inicio">
+
+          <label for="fecha_fin">Fecha de fin del contrato:</label>
+          <input type="date" id="fecha_fin" name="fecha_fin" data-target="span_fecha_fin">
+        
+          <label for="monto_renta">Monto de la renta mensual:</label>
+          <input type="text" id="monto_renta" name="monto_renta" data-target="span_renta">
+        
+          <label for="moneda">Moneda:</label>
+          <select id="moneda" name="moneda" data-target="span_moneda">
+            <option value="Soles">Soles</option>
+            <option value="Dolares">Dólares</option>
+            <option value="Euros">Euros</option>
+          </select>
+        </div>
+      </div>
+      
+      <div id="button-container">
+        <button id="prev-section" disabled>Anterior</button>
+        <button id="next-section">Siguiente</button>
+      </div>
+    </div>
+
+    <!-- Sección Derecha: Vista Previa del Contrato -->
+    <div class="right-section">
+      <h2>Vista Previa del Contrato</h2>
+      <div id="contract-preview">
+        <p style="text-align: center;"><strong>CONTRATO DE ARRENDAMIENTO DE VIVIENDA</strong></p>
+        <p style="text-align: right;">En <span id="span_id_nombre_sitio_contrato">________</span>, a <span id="span_id_fecha_contrato">________</span></p>
+        
+        <p><strong>De una parte:</strong></p>
+        <p><span id="span_id_nombre_arrendador1">________</span>, con domicilio en: <span id="span_id_domicilio_arrendador_fisica1">________</span>, en calidad de "Arrendador".</p>
+        
+        <p><strong>Y de otra parte:</strong></p>
+        <p><span id="span_id_nombre_arrendatario1">________</span>, con domicilio en: <span id="span_id_domicilio_arrendatario_fisica1">________</span>, en calidad de "Arrendatario".</p>
+        
+        <p><strong>EXPONEN:</strong></p>
+        <p>Que ambas partes acuerdan celebrar el presente contrato de arrendamiento, el cual se regirá por las siguientes cláusulas:</p>
+        
+        <p><strong>CLÁUSULA 1: OBJETO DEL CONTRATO</strong></p>
+        <p>El Arrendador concede en arrendamiento al Arrendatario el uso y disfrute del inmueble situado en la dirección indicada: <span id="span_id_direccion_inmueble">________</span>, tipo de inmueble: <span id="span_id_tipo_inmueble">________</span>.</p>
+        
+        <p><strong>CLÁUSULA 2: DURACIÓN</strong></p>
+        <p>La duración del presente contrato será de un año, comenzando el <span id="span_fecha_inicio">________</span> y finalizando el <span id="span_fecha_fin">________</span>. Ambas partes podrán acordar una prórroga del contrato antes de su vencimiento.</p>
+        
+        <p><strong>CLÁUSULA 3: RENTA</strong></p>
+        <p>El Arrendatario se compromete a pagar al Arrendador una renta mensual de <span id="span_renta">________</span> <span id="span_moneda">Soles</span>. El pago se realizará antes del día 5 de cada mes mediante transferencia bancaria a la cuenta proporcionada por el Arrendador.</p>
+
+        <p><strong>CLÁUSULA 4: GASTOS</strong></p>
+        <p>El Arrendatario será responsable de los gastos derivados de servicios como agua, electricidad, gas, y cualquier otro relacionado con el uso del inmueble.</p>
+        
+        <p><strong>CLÁUSULA 5: CONSERVACIÓN DEL INMUEBLE</strong></p>
+        <p>El Arrendatario se compromete a mantener el inmueble en buen estado y a comunicar al Arrendador cualquier desperfecto que requiera reparaciones mayores. No se permite realizar modificaciones al inmueble sin autorización previa por escrito.</p>
+        
+        <p><strong>CLÁUSULA 6: SUBARRENDAMIENTO</strong></p>
+        <p>El Arrendatario no podrá subarrendar el inmueble ni ceder su uso a terceros sin el consentimiento expreso del Arrendador.</p>
+        
+        <p><strong>CLÁUSULA 7: TERMINACIÓN</strong></p>
+        <p>El contrato podrá resolverse por mutuo acuerdo entre las partes, por incumplimiento de las obligaciones establecidas, o por vencimiento del plazo estipulado.</p>
+        
+        <p><strong>CLÁUSULA 8: JURISDICCIÓN</strong></p>
+        <p>Para la resolución de cualquier conflicto que pudiera surgir del presente contrato, ambas partes acuerdan someterse a los tribunales de la jurisdicción correspondiente.</p>
+        
+        <p><strong>FIRMAS</strong></p>
+        <p>En señal de conformidad, ambas partes firman el presente contrato en la fecha indicada al inicio.</p>
+        
+        <p style="margin-top: 40px;">_________________________<br><strong>Firma del Arrendador</strong></p>
+        <p style="margin-top: 40px;">_________________________<br><strong>Firma del Arrendatario</strong></p>
+      </div>      
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  
+</body>
+</html>
