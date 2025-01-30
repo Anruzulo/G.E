@@ -192,7 +192,7 @@ p strong {
     }
 }
 
-@media (max-width: 936px) and (min-width: 768px) {
+@media (max-width: 939px) and (min-width: 768px) {
     #button-container {
         display: flex;
         flex-direction: column;
